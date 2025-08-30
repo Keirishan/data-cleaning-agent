@@ -5,6 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
+data_cleaning_guide.pdf
 
 # Distribution / packaging
 .Python
