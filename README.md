@@ -57,6 +57,93 @@ processing_workspace/
 
 ## 🔄 The 5-Phase Workflow
 
+```mermaid
+flowchart TD
+    A[📁 Raw Dataset<br/>dataset_original/] --> B{🔍 Phase 1<br/>Dataset Validation<br/>& Discovery}
+    
+    B --> B1[📊 File Format Validation]
+    B --> B2[🔢 Data Profiling]
+    B --> B3[💾 Memory Assessment]
+    B1 --> B4{✅ Valid Dataset?}
+    B2 --> B4
+    B3 --> B4
+    
+    B4 -->|❌ Invalid| B5[🚨 Error Report<br/>& Exit]
+    B4 -->|✅ Valid| C{🔍 Phase 2<br/>Data Quality<br/>Assessment}
+    
+    C --> C1[🕳️ Missing Data Analysis<br/>MCAR/MAR/MNAR Detection]
+    C --> C2[👥 Duplicate Detection<br/>Exact & Fuzzy Matching]
+    C --> C3[📈 Outlier Detection<br/>Statistical Methods]
+    C --> C4[🏷️ Data Type Validation<br/>Format Consistency]
+    C --> C5[⚖️ Business Rule Validation<br/>Cross-field Checks]
+    
+    C1 --> C6[📋 Quality Report<br/>Generation]
+    C2 --> C6
+    C3 --> C6
+    C4 --> C6
+    C5 --> C6
+    
+    C6 --> D{🎯 Phase 3<br/>Cleaning Strategy<br/>Development}
+    
+    D --> D1[📊 Issue Prioritization<br/>Impact & Severity]
+    D --> D2[🤖 ML-Optimized<br/>Strategy Selection]
+    D --> D3[🛡️ Validation Framework<br/>Quality Thresholds]
+    D --> D4[⚠️ Risk Assessment<br/>& Rollback Planning]
+    
+    D1 --> D5[📝 Cleaning Plan<br/>Documentation]
+    D2 --> D5
+    D3 --> D5
+    D4 --> D5
+    
+    D5 --> E{🔧 Phase 4<br/>Data Cleaning<br/>Implementation}
+    
+    E --> E1[🔄 Missing Value Treatment<br/>Multiple Imputation]
+    E --> E2[🗑️ Duplicate Resolution<br/>Rule-based Deduplication]
+    E --> E3[🏷️ Data Type Standardization<br/>Format Normalization]
+    E --> E4[📊 Outlier Treatment<br/>Context-aware Handling]
+    E --> E5[⚙️ Feature Engineering<br/>Transformations & Encoding]
+    
+    E1 --> E6[💾 Cleaned Dataset<br/>Generation]
+    E2 --> E6
+    E3 --> E6
+    E4 --> E6
+    E5 --> E6
+    
+    E6 --> F{✅ Phase 5<br/>Quality Validation<br/>& Documentation}
+    
+    F --> F1[📊 Post-cleaning<br/>Quality Assessment]
+    F --> F2[📈 Statistical<br/>Impact Analysis]
+    F --> F3[📚 Comprehensive<br/>Documentation]
+    F --> F4[📦 Deliverable<br/>Packaging]
+    
+    F1 --> G[🎉 Final Outputs]
+    F2 --> G
+    F3 --> G
+    F4 --> G
+    
+    G --> G1[📊 cleaned_data/<br/>ML-Ready Dataset]
+    G --> G2[🐍 scripts/<br/>Reproducible Code]
+    G --> G3[📋 reports/<br/>Quality Reports]
+    G --> G4[📝 logs/<br/>Process Audit Trail]
+    
+    style A fill:#e1f5fe
+    style B fill:#f3e5f5
+    style C fill:#fff3e0
+    style D fill:#e8f5e8
+    style E fill:#fff8e1
+    style F fill:#f1f8e9
+    style G fill:#e8f5e8
+    style B5 fill:#ffebee
+    
+    classDef phaseBox fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#333
+    classDef outputBox fill:#e8f5e8,stroke:#4caf50,stroke-width:2px,color:#333
+    classDef errorBox fill:#ffebee,stroke:#f44336,stroke-width:2px,color:#333
+    
+    class B,C,D,E,F phaseBox
+    class G1,G2,G3,G4 outputBox
+    class B5 errorBox
+```
+
 ### Phase 1: Dataset Validation & Discovery
 - File existence and format validation
 - Initial data profiling and structure analysis
