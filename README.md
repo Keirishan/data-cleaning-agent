@@ -285,7 +285,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - 📖 **Documentation**: Check `instruction.md` for detailed guidance
 - 🐛 **Issues**: Report bugs via GitHub Issues
 - 💬 **Discussions**: Join our community discussions
-- 📧 **Contact**: [your.email@domain.com]
+- 📧 **Contact**: [keirishanb@outlook.com]
 
 ---
 
